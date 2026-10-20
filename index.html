@@ -255,9 +255,11 @@ section{padding:120px 0}
 .qa summary::-webkit-details-marker{display:none}
 .qa summary i{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:rgba(201,164,92,.1);box-shadow:0 0 0 1px rgba(201,164,92,.3) inset;color:var(--gold2);transition:transform .35s var(--ease),background .3s}
 .qa details[open] summary i{transform:rotate(45deg);background:var(--goldGrad);color:#16120a;box-shadow:none}
-.qa .ans{padding:0 22px 20px;color:var(--muted);font-size:15.5px}
+.qa .ans{overflow:hidden;color:var(--muted);font-size:15.5px}
+.qa .ans>div{padding:0 22px 20px;transform:translateY(-8px);opacity:0;transition:transform .45s var(--ease),opacity .35s}
+.qa details.open-anim .ans>div,.qa details[open]:not(.closing) .ans>div{transform:none;opacity:1}
 .qa .ans a,.qa .ans button.lnk{color:var(--gold2);text-decoration:underline;text-underline-offset:3px;font:inherit;cursor:pointer}
-@media(max-width:900px){.faq .wrap{grid-template-columns:1fr;gap:30px}.faq-head{position:static}.qa summary{font-size:15px;padding:18px}.qa .ans{padding:0 18px 18px;font-size:15px}}
+@media(max-width:900px){.faq .wrap{grid-template-columns:1fr;gap:30px}.faq-head{position:static}.qa summary{font-size:15px;padding:18px}.qa .ans{font-size:15px}.qa .ans>div{padding:0 18px 18px}}
 
 /* ============ FOOTER ============ */
 footer{position:relative;background:#080b0d;border-top:1px solid var(--line);padding:80px 0 34px;overflow:hidden}
@@ -537,14 +539,14 @@ footer .big{font-family:var(--display);font-size:clamp(70px,15vw,200px);line-hei
       <a class="btn btn-line" href="policies.html">All store policies</a>
     </div>
     <div class="qa reveal">
-      <details><summary>When will my pre-order be ready?<i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><div class="ans">Pre-orders lock in your size from the first run. We'll text or email you as soon as your gear is ready, and you can cancel for a full refund any time before then. <a href="policies.html#preorders">Pre-order details</a></div></details>
-      <details><summary>How does pickup work?<i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><div class="ans">Pick <strong>Pickup</strong> at checkout. It's free. Once your order is ready, we'll reach out to set up a time in Martensville.</div></details>
-      <details><summary>Do you deliver or ship?<i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><div class="ans">Yes. Saskatoon-area delivery is $5 and shipping anywhere in Canada is $15. Shipped orders come with tracking. <a href="policies.html#shipping">Shipping details</a></div></details>
-      <details><summary>How do the sizes run?<i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><div class="ans">Check the <button type="button" class="lnk" data-sg="tee">size guide</button> for chest and length measurements. Between sizes? Size up for a more relaxed fit.</div></details>
-      <details><summary>What if it doesn't fit?<i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><div class="ans">No stress. Unworn items with tags can be swapped for a different size. <a href="policies.html#returns">Returns &amp; exchanges</a></div></details>
-      <details><summary>Do you have promo codes?<i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><div class="ans">Watch our Instagram for drops and codes. If you have one, enter it on the secure checkout page under your order summary.</div></details>
-      <details><summary>Is checkout secure?<i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><div class="ans">Yes. Payments run through Stripe, so your card details never touch our site. We take Visa, Mastercard, Amex, Apple Pay and Google Pay.</div></details>
-      <details><summary>Do you do custom or team gear?<i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><div class="ans">We're all about custom SK apparel. Send us a message on <a href="https://www.instagram.com/fearthesheaf_306/" target="_blank" rel="noopener">Instagram</a> and tell us what you have in mind.</div></details>
+      <details><summary>When will my pre-order be ready?<i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><div class="ans"><div>Pre-orders lock in your size from the first run. We'll text or email you as soon as your gear is ready, and you can cancel for a full refund any time before then. <a href="policies.html#preorders">Pre-order details</a></div></div></details>
+      <details><summary>How does pickup work?<i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><div class="ans"><div>Pick <strong>Pickup</strong> at checkout. It's free. Once your order is ready, we'll reach out to set up a time in Martensville.</div></div></details>
+      <details><summary>Do you deliver or ship?<i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><div class="ans"><div>Yes. Saskatoon-area delivery is $5 and shipping anywhere in Canada is $15. Shipped orders come with tracking. <a href="policies.html#shipping">Shipping details</a></div></div></details>
+      <details><summary>How do the sizes run?<i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><div class="ans"><div>Check the <button type="button" class="lnk" data-sg="tee">size guide</button> for chest and length measurements. Between sizes? Size up for a more relaxed fit.</div></div></details>
+      <details><summary>What if it doesn't fit?<i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><div class="ans"><div>No stress. Unworn items with tags can be swapped for a different size. <a href="policies.html#returns">Returns &amp; exchanges</a></div></div></details>
+      <details><summary>Do you have promo codes?<i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><div class="ans"><div>Watch our Instagram for drops and codes. If you have one, enter it on the secure checkout page under your order summary.</div></div></details>
+      <details><summary>Is checkout secure?<i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><div class="ans"><div>Yes. Payments run through Stripe, so your card details never touch our site. We take Visa, Mastercard, Amex, Apple Pay and Google Pay.</div></div></details>
+      <details><summary>Do you do custom or team gear?<i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><div class="ans"><div>We're all about custom SK apparel. Send us a message on <a href="https://www.instagram.com/fearthesheaf_306/" target="_blank" rel="noopener">Instagram</a> and tell us what you have in mind.</div></div></details>
     </div>
   </div>
 </section>
@@ -917,6 +919,29 @@ $("#payBtn").onclick=async()=>{
   }catch(err){toast("Couldn't start checkout. Please try again");b.disabled=false;b.innerHTML=old;}
 };
 if(new URLSearchParams(location.search).get("checkout")==="cancelled"){setTimeout(()=>{openCart()},400);history.replaceState(null,"",location.pathname);}
+
+/* FAQ: smooth slide open / closed */
+document.querySelectorAll(".qa details").forEach(d=>{
+  const s=d.querySelector("summary"), a=d.querySelector(".ans");
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  s.addEventListener("click",e=>{
+    e.preventDefault(); if(d.dataset.busy) return;
+    if(reduce){d.open=!d.open;return;}
+    d.dataset.busy=1;
+    if(!d.open){
+      d.open=true; const h=a.scrollHeight; a.style.height="0px"; d.classList.remove("closing");
+      requestAnimationFrame(()=>{a.style.transition="height .42s cubic-bezier(.2,.8,.2,1)";a.style.height=h+"px";});
+    }else{
+      a.style.height=a.scrollHeight+"px"; d.classList.add("closing");
+      requestAnimationFrame(()=>{a.style.transition="height .34s cubic-bezier(.4,0,.2,1)";a.style.height="0px";});
+    }
+    a.addEventListener("transitionend",function done(ev){
+      if(ev.propertyName!=="height")return; a.removeEventListener("transitionend",done);
+      if(d.classList.contains("closing")){d.open=false;d.classList.remove("closing");}
+      a.style.transition="";a.style.height="";delete d.dataset.busy;
+    });
+  });
+});
 
 /* nav + floating cart on scroll */
 const nav=$("#nav"), fab=$("#cartBtn");
