@@ -118,3 +118,9 @@ After editing the worker, run `npx wrangler deploy`.
 ## Size guide numbers
 The chart uses typical tee and hoodie measurements. Swap in the measurements from her blank supplier in `index.html`.
 Search for `SIZE_CHART`. Each row is `[size, chest width, length]` in inches, and centimetres are calculated automatically.
+
+## Turning prices on
+Prices are hidden right now, and shoppers see "$XX". When she confirms real prices:
+1. In `index.html`, set each `price:` in the `PRODUCTS` list. Then change `const SHOW_PRICES = false;` to `true`.
+2. In `checkout-worker/worker.js`, set the same prices in `CATALOG`, in cents (35 dollars = `3500`).
+3. Re-add the product data for Google. Ask Claude to rebuild with prices on, since that block is generated.
