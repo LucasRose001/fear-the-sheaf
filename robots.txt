@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /success.html
+Disallow: /checkout-worker/
+
+Sitemap: https://lucasrose001.github.io/fear-the-sheaf/sitemap.xml

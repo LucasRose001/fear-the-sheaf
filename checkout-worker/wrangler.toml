@@ -1,0 +1,11 @@
+name = "fts-checkout"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+
+[vars]
+# Change these to the real site address once the domain is connected
+SITE_URL = "https://lucasrose001.github.io/fear-the-sheaf"
+ALLOWED_ORIGINS = "https://lucasrose001.github.io"
+
+# The Stripe key is a SECRET. Never put it in this file. Set it with:
+#   npx wrangler secret put STRIPE_SECRET_KEY
